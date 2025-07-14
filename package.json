@@ -1,0 +1,27 @@
+{
+  "name": "endpoint-watcher-node",
+  "version": "1.0.0",
+  "description": "Aplicación de monitoreo de endpoints. Aviso en tiempo real.",
+  "keywords": [
+    "node",
+    "watcher",
+    "mail",
+    "noc",
+    "tester"
+  ],
+  "license": "ISC",
+  "author": "Pedro P.",
+  "type": "commonjs",
+  "main": "app.ts",
+  "scripts": {
+    "dev": "tsnd --respawn --clear src/app.ts",
+    "build": "rimraf ./dist && tsc",
+    "start": "npm run build && node dist/app.js"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.13",
+    "rimraf": "^6.0.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
