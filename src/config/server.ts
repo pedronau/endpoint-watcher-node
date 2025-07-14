@@ -1,12 +1,20 @@
+import { LogEntityStatus } from "./entities/log.entity";
 import { CheckService } from "./services/check.service";
+import { FileSystem } from "./services/filesystem.service";
 
 export class ServerApp {
   public static async start(url: string) {
     const isWorking = await new CheckService().watch(url);
     if (isWorking) {
-        //TODO: aqui tiene que meter el aviso en un archivo de logs de succes
+      new FileSystem().saveSuccessLogs({
+        status: LogEntityStatus.success,
+        message: `El endpoint ${url} funciona correctamente`,
+      });
     } else {
-        //TODO: aqui lo que sucede cuando hay un error: mandar un correo y ademas meterlo en los logs de error
+      new FileSystem().saveErrorLogs({
+        status: LogEntityStatus.error,
+        message: `El endpoint ${url} no está funcionando`,
+      });
     }
   }
 }
