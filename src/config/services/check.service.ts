@@ -1,9 +1,9 @@
 interface CheckServiceOptions {
-  execute(url: string): Promise<boolean>;
+  watch(url: string): Promise<boolean>;
 }
 
 export class CheckService implements CheckServiceOptions {
-  async execute(url: string): Promise<boolean> {
+  async watch(url: string): Promise<boolean> {
     try {
       await fetch(url);
       console.log("\x1b[32m" + url + " está funcionando\x1b[0m");
