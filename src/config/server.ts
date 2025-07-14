@@ -35,4 +35,10 @@ export class ServerApp {
       }
     });
   }
+
+  public static sendReportEmail() {
+    CronPlugin.createJob("00 00 00 * * *", async () => {
+      new EmailService().sendEmailPeriodically(envs.NOTIFICATION_EMAIL);
+    });
+  }
 }

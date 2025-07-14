@@ -42,7 +42,12 @@ export class EmailService {
 
   async sendEmailPeriodically(to: string | string[]) {
     const subject = "Informe de logs de error diario";
-    const htmlBody = `Esto es una prueba`;
+    const htmlBody = `
+    <p>📄 ¡Hola!</p>
+    <p>Te envío el informe de errores de hoy 📎</p>
+    <p>Échale un vistazo cuando puedas 👀</p>
+    <p>— Mensaje automático 🤖</p>
+    `;
     const attachments: Attachment[] = [
       {
         fileName: "error.log",
