@@ -5,13 +5,11 @@ interface CheckServiceOptions {
 export class CheckService implements CheckServiceOptions {
   async execute(url: string): Promise<boolean> {
     try {
-      const req = await fetch(url);
-      if (!req.ok) {
-        throw new Error(`Error en el fetch: ${url}`);
-      }
-      console.log(`${url} está funcionando`);
+      await fetch(url);
+      console.log("\x1b[32m" + url + " está funcionando\x1b[0m");
       return true;
     } catch (error) {
+      console.log("\x1b[31m" + url + " no funciona correctamente\x1b[0m");
       return false;
     }
   }
