@@ -1,6 +1,6 @@
 # 🛡️ Endpoint Watcher - Aplicación de monitoreo y aviso de errores en Node.js
 
-Mi segundo proyecto en Node, este es un sistema de monitoreo (NOC) desarrollado en **Node.js** con sistema de **logging en filesystem**, y alertas por **correo electrónico** en caso de eventos o anomalías detectadas.
+Mi segundo proyecto en Node, este es un sistema de monitoreo (NOC) desarrollado en **Node.js** con sistema de **logging en filesystem**, y alertas por **correo electrónico** en caso de eventos o anomalías detectadas. Implementación de tests automáticons con **Jest**.
 
 El objetivo de este es monitorear una serie de endpoints/urls (que nosotros eligiremos) y que vaya haciendo comprobaciones periódicas de su funcionamiento. Si detecta un error enviará un correo electrónico de aviso para que el usuario sea consciente. 
 
@@ -43,5 +43,9 @@ Esto consultará periódicamente los enlaces que le hemos indicado en el archivo
 - "https://github.com/pedronau" y "https://www.linkedin.com/in/pedro-pe%C3%B1as-759951246/" mis perfiles de GitHub y LinkedIn como ejemplos de enlaces que funcionan.
  
 La aplicación los consultará cada 30 segundos (para fines prácticos), este tiempo es configurable y se puede cambiar en cualquier momento. También enviará un mail automático avisando del error y creará una carpeta llamada "logs" en la quer irá registrando el resultado de su comprobación en dos archivos distintos "success.log" y "error.log". Este último archivo se enviará a medianoche adjunto en un correo como informe de errores.
+
+6. Ejecución de los tests automáticos:
+
+        npm run test
 
 ¡Gracias por llegar hasta aquí!

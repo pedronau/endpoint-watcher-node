@@ -1,5 +1,5 @@
 import fs from "fs";
-import { LogEntity } from "../entities/log.entity";
+import { LogEntity } from "../entities/log-entity";
 
 interface FileSystemLogs {
   saveSuccessLogs(newLog: LogEntity): Promise<boolean>;
