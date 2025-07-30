@@ -15,4 +15,3 @@ export class CheckService implements CheckServiceOptions {
   }
 }
 
-//esto se va a encargar de comprobar si la url está activa o no

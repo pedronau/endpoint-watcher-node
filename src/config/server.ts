@@ -1,8 +1,8 @@
 import { LogEntity, LogEntityStatus } from "./entities/log-entity";
 import { CronPlugin } from "./plugins/cron-plugin";
 import { envs } from "./plugins/envs-plugin";
-import { CheckService } from "./services/check.service";
-import { EmailService } from "./services/email.service";
+import { CheckService } from "./services/check-service";
+import { EmailService } from "./services/email-service";
 import { FileSystem } from "./services/filesystem.service";
 
 export class ServerApp {
